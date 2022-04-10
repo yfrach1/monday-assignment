@@ -61,7 +61,7 @@ const Demo = () => {
             alignItems: "center",
           }}
         >
-          <h1>Gmae Over</h1>
+          <h1>Game Over</h1>
           <div
             className="generic_button"
             onClick={() => {

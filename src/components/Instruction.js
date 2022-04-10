@@ -12,11 +12,11 @@ const SetUserName = () => {
       }}
     >
       <h1>
-        This is uniqe trivia game and the winner may be hired on Monday so try
-        your best to succsed!
+        This is uniqe trivia game and the winner maight get hired to Monday so
+        try your best to win!
       </h1>
       <div style={{ marginBottom: "10px" }}>
-        you will face 15 randomly questions, start with easy and move on to
+        You will face 15 random questions, starting from easy and moving to
         medium and hard questions. dont worry, you will have some help ;)
       </div>
       <div style={{ marginBottom: "10px" }}>
@@ -27,14 +27,14 @@ const SetUserName = () => {
         skipQuestion button - will give move on to the next question.
         <div />
         <div style={{ marginBottom: "10px" }}>
-          the score will be result of correct answers and depends on how much
-          fast you are so dont waste you time.
+          The score will be calculated by how fast you answer the questions and
+          the amount of correct answers.
         </div>
         <div style={{ marginBottom: "10px" }}>
-          you will have each button only one time use until question 10. for the
-          last 5 question (hard) you will have new buttons that i hope will serv
-          you well. be ready to start your journy and be part of Monday. GOOD
-          LUCK.
+          You will ba able to use each help button only one time until question
+          number 10.For the last 5 question (hard) you will have new buttons
+          that i hope will serve you well. Be ready to start your journey and be
+          part of Monday. GOOD LUCK.
         </div>
       </div>
     </div>

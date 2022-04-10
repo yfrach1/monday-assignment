@@ -1,11 +1,9 @@
 const ClientRoutes = {
-
-    User : {
-        demo: "/demo",
-        main: "/main",
-        leaderboard : "/leaderboard"
-
-
-    }
+  User: {
+    main: "/main",
+    game: "/game",
+    demo: "/demo",
+    leaderboard: "/leaderboard",
+  },
 };
 export default ClientRoutes;

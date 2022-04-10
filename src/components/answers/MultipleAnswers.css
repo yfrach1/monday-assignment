@@ -1,0 +1,26 @@
+.displayAnswers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.answers {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: rgba(255, 0, 0, 0.5), rgba(0, 128, 0, 0.5), rgba(255, 255, 0, 0.5);
+}
+
+.answers div {
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 10px;
+  width: 450px;
+  background-color: aliceblue;
+  box-shadow: 0 2px 4px silver;
+  border-radius: 100px;
+
+  margin: 10px 10px;
+
+  cursor: pointer;
+}

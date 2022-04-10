@@ -1,52 +1,79 @@
-import React,{useState} from 'react';
-import './Demo.css'
-import {Shuffle} from '../functions/Shuffle'
-const Queastions = [
-    {questionNumber:1, question: "What are Monday's colors?", correctAnswer:"green, red, yellow", 
-    incorrectAnswer:["yellow, green, white" , "red, yellow, blue", "green, pink, yellow"]}
+import React from "react";
+import "./Demo.css";
+import { useHistory } from "react-router-dom";
+import ClientRoutes from "./navigation/Routes";
+import { Questions } from "../Data/DemoQuestions";
+import { useDispatch, useSelector } from "react-redux";
+import Container from "./Container";
+import {
+  incrementQuestionIndex,
+  setTimer,
+} from "../store/reducers/questionsReducer";
+import Monday from "../common/Monday";
 
-    ,{questionNumber:2, question: "What are Monday's colors?", correctAnswer:"green, red, yellow", 
-    incorrectAnswer:["yellow, green, white" , "red, yellow, blue", "green, pink, yellow"]}
+const Demo = () => {
+  const history = useHistory();
+  const dispatch = useDispatch();
 
-    ,{questionNumber:3, question: "What are Monday's colors?", correctAnswer:"green, red, yellow", 
-    incorrectAnswer:["yellow, green, white" , "red, yellow, blue", "green, pink, yellow"]}
-]
+  const questionIndex = useSelector(
+    (state) => state.questionsReducer.questionIndex
+  );
 
+  const questionTimeEndHandler = () => {
+    dispatch(incrementQuestionIndex());
+    dispatch(setTimer(31));
+  };
 
-const Demo = (props) => {
-    const [quesDis, setQuesDis] = useState(0)
-    const indexes = [0,1,2,3]
-    let showAnswer = [true,true,true,true];
-    let display = Queastions[quesDis].incorrectAnswer.concat(Queastions[quesDis].correctAnswer)
-    let correctAnswer = Queastions[quesDis].correctAnswer;
-    Shuffle(display);
+  ///up is good, down need to be changed
 
-    const CutAnswersByHalf = () =>{
-        // correctIndex =display.indexOf(correctAnswer);
-        // let answersToCut = [...indexes];
-        // answersToCut.splice(index, correctIndex);
-
-
-    }
-
-return(
-<div style={{width:"100%", height:"100vh"}}>
-    
-    <div className='displayQueastion'>
-    <button className='cutAnswersByHalf' onClick={CutAnswersByHalf}>50/50</button>
-<div style={{marginBottom : "50px" , fontSize : "50px"}}>{Queastions[quesDis].question}</div>
-    <div className='answerButton'>
-        <div>{showAnswer[0]&&display[0]}</div>
-        <div>{showAnswer[1]&&display[1]}</div>    
+  return (
+    <div
+      style={{
+        width: "100%",
+        minHeight: "100vh",
+        background:
+          "linear-gradient(to bottom right, rgba(255, 0, 0, 0.1),rgba(0, 128, 0, 0.1),rgba(255, 255, 0, 0.1))",
+      }}
+    >
+      <Monday />
+      {questionIndex < 3 ? (
+        <div className="container">
+          <Container
+            type={Questions[questionIndex].type}
+            question={Questions[questionIndex].question}
+            correctAnswer={Questions[questionIndex].correctAnswer}
+            incorrectAnswers={Questions[questionIndex].incorrectAnswers}
+            timeEndHandler={questionTimeEndHandler}
+            duration={30}
+            difficulty={Questions[questionIndex].difficulty}
+            questionNumberByDifficulty={(questionIndex % 3) + 1}
+            numOfQuestionByDifficulty={3}
+          />
+        </div>
+      ) : (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            height: "100vh",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <h1>Gmae Over</h1>
+          <div
+            className="generic_button"
+            onClick={() => {
+              history.push(ClientRoutes.User.main);
+            }}
+          >
+            Back to HomePage
+          </div>
+        </div>
+      )}
     </div>
-    <div className='answerButton'>
-        <div>{showAnswer[2]&&display[2]}</div>
-        <div>{showAnswer[3]&&display[3]}</div>
-    </div>
-    </div>
-</div>)
+  );
+};
 
-}
-
-
-export default Demo
+export default Demo;

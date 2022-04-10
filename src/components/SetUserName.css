@@ -1,0 +1,43 @@
+.set_user_name_div {
+  width: 30%;
+  padding: 30px 0;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px #3a3c3f;
+  position: relative;
+}
+
+.set_user_name_div input {
+  padding: 10px;
+  width: 60%;
+  margin: 10px auto;
+}
+
+.enter_name_div {
+  margin-top: 20px;
+  font-weight: 600;
+  background: #3a3c3f;
+  color: #f2f2f2;
+  transition: all 200ms;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px silver;
+  cursor: pointer;
+}
+
+.enter_name_div:hover {
+  background: #f2f2f2;
+  color: #3a3c3f;
+  transition: all 200ms;
+}
+
+.closePosition {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  cursor: pointer;
+}

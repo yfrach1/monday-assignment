@@ -1,7 +1,9 @@
-.cutAnswersByHalf {
+.answers {
+  /* display: flex; */
   font-size: 30px;
   text-align: center;
   padding: 10px 20px;
   width: 450px;
-  border: 1px solid red;
+  border: 1px solid #ff0000;
+  color: #1eff00;
 }

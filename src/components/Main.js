@@ -55,7 +55,7 @@ const Main = () => {
           </div>
           <img src={medal} alt="medal" style={{ width: "50px" }} />
         </div>
-        <h1>Who wnat to work at Monday?</h1>
+        <h1>Who want to work at Monday?</h1>
         <button
           className="generic_button"
           onClick={() => setShowSetUserNamePopUp(true)}
@@ -72,7 +72,7 @@ const Main = () => {
           className="generic_button"
           onClick={() => setshowInstructionPopUp(true)}
         >
-          Instruction
+          Instructions
         </button>
         <button
           className="generic_button"
